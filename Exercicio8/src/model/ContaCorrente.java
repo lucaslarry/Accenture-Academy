@@ -11,6 +11,9 @@ public class ContaCorrente {
     private LocalDate data;
 
     public ContaCorrente(int numero, Cliente cliente, double saldoInicial, LocalDate data) {
+        if (data.isBefore(LocalDate.now())) {
+            throw new IllegalArgumentException("A data de abertura não pode ser anterior à data atual.");
+        }
         this.numero = numero;
         this.cliente = cliente;
         this.saldo = saldoInicial;

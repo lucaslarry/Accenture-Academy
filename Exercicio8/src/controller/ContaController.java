@@ -33,7 +33,6 @@ public class ContaController {
             origem.transferir(destino, valor);
             view.mostrarMensagem("Transferência realizada com sucesso!");
 
-            // Exibe o saldo de cada transação (ambas as contas)
             view.mostrarSaldo(origem.getNumero(), origem.getSaldo());
             view.mostrarSaldo(destino.getNumero(), destino.getSaldo());
         } catch (SaldoInsuficienteException e) {
