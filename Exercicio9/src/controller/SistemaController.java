@@ -75,12 +75,14 @@ public class SistemaController {
 
     private void gerarRelatorios() {
         switch (String.valueOf(listaAlunos.isEmpty())) {
-            case "true":
+            case "true" -> {
                 view.exibirMensagem("\n[AVISO] Nenhum aluno cadastrado.");
-                break;
 
-            case "false":
+            }
+
+            case "false"->{
                 view.exibirRelatorioIndividual(listaAlunos);
+
 
                 double maior = listaAlunos.getFirst().getMedia();
                 double menor = listaAlunos.getFirst().getMedia();
@@ -111,7 +113,7 @@ public class SistemaController {
                     boolean adicionado = a.getMedia() == maior;
                 }
                 view.exibirMelhoresAlunos(melhores);
-                break;
+            }
         }
     }
 }
